@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Builder</title>
+</head>
+<body>
+    <h1>Static Resume Builder By Muhammad Aakash</h1>
+    <form id="resumeForm">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name: </label>
+            <input type="text" id="name" required><br>
+
+            <label for="email">E-mail: </label>
+            <input type="email" id="email" name="E-mail" required><br>
+            break;
+
+            <label for="phone">Phone: </label>
+            <input type="tel" id="phone" required>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Education</legend>
+            <label for="education">Education</label>
+            <textarea id="education" name="education" rows="4" required></textarea><br>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Experience</legend>
+            <label for="experience">Experience</label>
+            <textarea id="experience" name="experience" rows="4" required></textarea><br>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Skill</legend>
+            <label for="skill">Skill</label>
+            <textarea id="skill" name="skill" rows="4" required></textarea><br>
+        </fieldset>
+
+        <button type="submit">Generate Resume Below</button>
+    </form>
+
+    <!-- Audio element for the giggle sound -->
+    <audio id="giggleSound" src="giggle.mp3" preload="auto"></audio>
+
+    <script>
+        // Play the giggle sound when the page loads
+        window.onload = function() {
+            const giggleSound = document.getElementById('giggleSound');
+            giggleSound.play();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+    padding: 0;
+    background: linear-gradient(to right, rgb(22, 197, 203), rgba(105, 235, 45, 0.458), rgb(153, 19, 231));
+}
+h1 {
+
+    text-align: center;
+    color: rgb(222, 93, 33);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background-color: rgb(234, 57, 13), rgb(64, 192, 39);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px black;
+    padding: 20px;
+}
+
+fieldset {
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(71, 213, 175) rgb(169, 28, 160);
+}
+legend {
+    font-weight: bold;
+    text-align: left;
+    color: rgb(30, 146, 146);
+}
+label{
+    display: block;
+    margin-top: 10px;
+    color: black;
+
+}
+input,textarea {
+    width: calc(100% - 1px);
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: background-color #349834 0.3s ease;
+}
+
+button{
+    display: block;
+    width: 100px;
+    padding: 10px;
+    background-color: rgb(147, 7, 9);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: aqua;
+    transform: scale(1.1);
+}
+
+input:hover, textarea:hover {
+    background-color: rgba(23, 122, 189, 0.1);
+}
+
+input:hover::after, textarea:hover::after {
+    content: '↑'; /* This is the "up" arrow */
+    position: absolute;
+    right: 10px; /* Adjust the position as needed */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    font-size: 12px; /* Adjust the size as needed */
+    color: #3498db; /* Match the border color or any color you prefer */
+}
+
+input:focus, textarea:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+    outline: none;
+}
+
+/* Pop-up container */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: popUp 0.3s ease-out;
+}
+
+/* Pop-up animation */
+@keyframes popUp {
+    from { transform: translate(-50%, -60%); opacity: 0; }
+    to { transform: translate(-50%, -50%); opacity: 1; }
+}
+
+/* Overlay */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Define the keyframes for the "up" animation */
+@keyframes moveUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply the animation to the element on hover */
+.element-to-animate:hover {
+    animation: moveUp 0.3s ease forwards;
+}
